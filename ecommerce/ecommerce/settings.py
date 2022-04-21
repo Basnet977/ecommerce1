@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'clothing',
+    'ckeditor',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -119,8 +121,28 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR.joinpath('static')
 STATIC_URL = 'static/'
+MEDIA_ROOT = BASE_DIR.joinpath('uploads')
+MEDIA_URL = '/uploads/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 1000,
+    },
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'tusarbasnet7@gmail.com'
+EMAIL_HOST_PASSWORD = 'Basnet123'
